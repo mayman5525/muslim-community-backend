@@ -1,0 +1,8 @@
+{"level":"info","message":"🚀 Server running on port 3000","service":"form-api","timestamp":"2025-08-02T22:33:13.259Z"}
+{"level":"info","message":"::1 - - [02/Aug/2025:22:58:34 +0000] \"POST /api/auth/signup/step1 HTTP/1.1\" 400 103 \"-\" \"PostmanRuntime/7.44.1\"","service":"form-api","timestamp":"2025-08-02T22:58:34.310Z"}
+{"level":"info","message":"::1 - - [02/Aug/2025:23:00:02 +0000] \"POST /api/auth/signup/step1 HTTP/1.1\" 400 103 \"-\" \"PostmanRuntime/7.44.1\"","service":"form-api","timestamp":"2025-08-02T23:00:02.560Z"}
+{"level":"info","message":"::1 - - [02/Aug/2025:23:02:44 +0000] \"POST /api/auth/signup/step1 HTTP/1.1\" 400 103 \"-\" \"PostmanRuntime/7.44.1\"","service":"form-api","timestamp":"2025-08-02T23:02:44.942Z"}
+{"level":"info","message":"::1 - - [02/Aug/2025:23:03:16 +0000] \"POST /api/auth/signup/step1 HTTP/1.1\" 201 52 \"-\" \"PostmanRuntime/7.44.1\"","service":"form-api","timestamp":"2025-08-02T23:03:16.149Z"}
+{"level":"info","message":"::1 - - [02/Aug/2025:23:05:03 +0000] \"POST /api/auth/signup/step2 HTTP/1.1\" 404 161 \"-\" \"PostmanRuntime/7.44.1\"","service":"form-api","timestamp":"2025-08-02T23:05:03.029Z"}
+{"level":"info","message":"::1 - - [02/Aug/2025:23:05:30 +0000] \"POST /api/auth/signup/step2/688e993497d50daa834fe6e0 HTTP/1.1\" 200 481 \"-\" \"PostmanRuntime/7.44.1\"","service":"form-api","timestamp":"2025-08-02T23:05:30.091Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"form-api","timestamp":"2025-08-02T23:05:44.960Z"}
