@@ -2,12 +2,14 @@
 
 ## base url
 
-https://muslim-community-backend.onrender.com/api/auth
+https://muslim-community-backend.onrender.com/api
 
 ---
 
+# signup step one
+
 ```
- POST /signup/step1
+ POST /auth/signup/step1
 ```
 
 ### Description
@@ -39,10 +41,12 @@ you cannot create two userswith the same email address.
 }
 ```
 
-## Step 2: Complete User Profile
+# signup step two
+
+## Complete User Profile
 
 ```
-POST /signup/step2/:userId
+POST /auth/signup/step2/:userId
 
 ```
 
@@ -81,5 +85,29 @@ POST /signup/step2/:userId
     "bio": "I'm a creative media specialist.",
     "role": "business owner"
   }
+}
+```
+
+## login
+
+```
+POST /auth/signin
+```
+
+## request body
+
+```json
+{
+  "email": "admin6@gmail.com",
+  "password": "admin12345"
+}
+```
+
+## sucess response
+
+```json
+{
+  "success": true,
+  "token": "etc"
 }
 ```
