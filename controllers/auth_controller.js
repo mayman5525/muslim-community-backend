@@ -30,3 +30,11 @@ exports.signin = async (req, res) => {
     res.status(401).json({ success: false, message: err.message });
   }
 };
+
+exports.resetPassword = async(req,res)=>{
+    try {
+        
+    } catch (err) {
+        
+    }
+}
