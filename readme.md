@@ -1,15 +1,22 @@
 # this project is a community for muslim people that lives in usa
- 
- ## base url 
- https://muslim-community-backend.onrender.com/api/auth
+
+## base url
+
+https://muslim-community-backend.onrender.com/api/auth
 
 ---
 
+```
  POST /signup/step1
+```
 
- ### Description
+### Description
 
 Creates a new user account with essential details.
+
+### note
+
+you cannot create two userswith the same email address.
 
 ### Request Body
 
@@ -23,7 +30,8 @@ Creates a new user account with essential details.
 }
 ```
 
-### success respose 
+### success respose
+
 ```
 {
   "success": true,
@@ -38,9 +46,11 @@ Creates a new user account with essential details.
 POST /signup/step2/:userId
 
 ```
+
 ### Replace :userId with the actual user ID from Step 1.
 
-## request body 
+## request body
+
 ```
 {
   "skills": ["media"],
@@ -50,7 +60,9 @@ POST /signup/step2/:userId
   "agreedToTerms": true
 }
 ```
+
 ## sucess response
+
 ```
 {
   "success": true,
