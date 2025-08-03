@@ -32,12 +32,11 @@ you cannot create two userswith the same email address.
 
 ### success respose
 
-```
+```json
 {
   "success": true,
   "userId": "688fcb518f34c4eb0a29265f"
 }
-
 ```
 
 ## Step 2: Complete User Profile
@@ -51,7 +50,7 @@ POST /signup/step2/:userId
 
 ## request body
 
-```
+```json
 {
   "skills": ["media"],
   "customSkills": ["video editing", "storyboarding"],
@@ -63,7 +62,7 @@ POST /signup/step2/:userId
 
 ## sucess response
 
-```
+```json
 {
   "success": true,
   "message": "Profile completed",
