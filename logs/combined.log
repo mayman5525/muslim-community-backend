@@ -6,3 +6,11 @@
 {"level":"info","message":"::1 - - [02/Aug/2025:23:05:03 +0000] \"POST /api/auth/signup/step2 HTTP/1.1\" 404 161 \"-\" \"PostmanRuntime/7.44.1\"","service":"form-api","timestamp":"2025-08-02T23:05:03.029Z"}
 {"level":"info","message":"::1 - - [02/Aug/2025:23:05:30 +0000] \"POST /api/auth/signup/step2/688e993497d50daa834fe6e0 HTTP/1.1\" 200 481 \"-\" \"PostmanRuntime/7.44.1\"","service":"form-api","timestamp":"2025-08-02T23:05:30.091Z"}
 {"level":"info","message":"SIGINT received, shutting down gracefully","service":"form-api","timestamp":"2025-08-02T23:05:44.960Z"}
+{"level":"info","message":"🚀 Server running on port 3000","service":"form-api","timestamp":"2025-08-03T22:23:32.801Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"form-api","timestamp":"2025-08-03T22:23:43.963Z"}
+{"level":"info","message":"🚀 Server running on port 3000","service":"form-api","timestamp":"2025-08-03T23:18:29.431Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"form-api","timestamp":"2025-08-03T23:20:39.509Z"}
+{"level":"info","message":" Server running on port 3000","service":"server file","timestamp":"2025-08-03T23:21:01.836Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"server file","timestamp":"2025-08-03T23:21:03.101Z"}
+{"level":"info","message":" Server running on port 3000","service":"server file","timestamp":"2025-08-03T23:22:13.933Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","service":"server file","timestamp":"2025-08-03T23:22:16.363Z"}

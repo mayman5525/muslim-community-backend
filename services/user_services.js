@@ -1,7 +1,7 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user_model");
-
+const nodemailer = require("nodemailer");
 exports.createUserStep1 = async ({ fullName, email, password, confirmPassword, phoneNumber, personalPhoto }) => {
   if (password !== confirmPassword) throw new Error("Passwords do not match");
 
@@ -51,4 +51,44 @@ exports.login = async (email, password) => {
   );
 
   return token;
+};
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.GMAIL_USER,       
+    pass: process.env.GMAIL_APP_PASS    
+  }
+});
+
+exports.sendResetCode = async (email) => {
+  const user = await User.findOne({ email });
+  if (!user) throw new Error("Email not found");
+
+  const resetCode = Math.floor(100000 + Math.random() * 900000).toString(); 
+  user.resetCode = resetCode;
+  user.resetCodeExpiry = Date.now() + 10 * 60 * 1000;
+  await user.save();
+
+  await transporter.sendMail({
+    from: process.env.GMAIL_USER,
+    to: email,
+    subject: "Your Password Reset Code for muslim community Account",
+    html: `<p>Your password reset code is: <strong>${resetCode}</strong></p>`
+  });
+};
+
+exports.verifyAndResetPassword = async (email, code, newPassword, confirmPassword) => {
+  const user = await User.findOne({ email });
+  if (!user) throw new Error("User not found");
+  if (!user.resetCode || user.resetCode !== code) throw new Error("Invalid reset code");
+  if (user.resetCodeExpiry < Date.now()) throw new Error("Reset code expired");
+
+  if (newPassword !== confirmPassword) throw new Error("Passwords do not match");
+
+  const hashedPassword = await bcrypt.hash(newPassword, 12);
+  user.password = hashedPassword;
+  user.resetCode = undefined;
+  user.resetCodeExpiry = undefined;
+  await user.save();
 };
