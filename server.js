@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
+const nodemon = require("nodemon");
 const logger = require("./utils/logger");
 const initDb = require("./utils/initDB");
 const winston = require("winston");
@@ -92,7 +93,7 @@ process.on("SIGINT", () => {
 (async () => {
   await initDb();
   app.listen(PORT, () => {
-    logger.info(`🚀 Server running on port ${PORT}`);
+    logger.info(` Server running on port ${PORT}`);
   });
 })();
 

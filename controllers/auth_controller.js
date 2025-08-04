@@ -31,10 +31,22 @@ exports.signin = async (req, res) => {
   }
 };
 
-exports.resetPassword = async(req,res)=>{
-    try {
-        
-    } catch (err) {
-        
-    }
-}
+exports.requestPasswordReset = async (req, res) => {
+  try {
+    const { email } = req.body;
+    await userService.sendResetCode(email);
+    res.status(200).json({ success: true, message: "Reset code sent to email" });
+  } catch (err) {
+    res.status(400).json({ success: false, message: err.message });
+  }
+};
+
+exports.confirmResetCode = async (req, res) => {
+  try {
+    const { email, code, newPassword, confirmPassword } = req.body;
+    await userService.verifyAndResetPassword(email, code, newPassword, confirmPassword);
+    res.status(200).json({ success: true, message: "Password reset successful" });
+  } catch (err) {
+    res.status(400).json({ success: false, message: err.message });
+  }
+};
